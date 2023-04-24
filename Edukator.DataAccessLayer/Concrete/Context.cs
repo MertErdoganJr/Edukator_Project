@@ -1,5 +1,6 @@
 ﻿using Edukator.EntityLayer.Concreate;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,5 +19,10 @@ namespace Edukator.DataAccessLayer.Concrete
         public DbSet<Category> Categories { get; set; }
         public DbSet<ContactInfo> ContactInfos { get; set; }  
         public DbSet<Contact> Contacts { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<Map> Maps { get; set; }
+        public DbSet<Reference> References { get; set; }
+        public DbSet<Subscriber> Subscribers { get; set; }
+        public DbSet<SocialMedia> SocialMedias { get; set; }
     }
 }
