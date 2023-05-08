@@ -3,6 +3,7 @@ using Edukator.BusinessLayer.Concrete;
 using Edukator.DataAccessLayer.Abstract;
 using Edukator.DataAccessLayer.Concrete;
 using Edukator.DataAccessLayer.EntityFramework;
+using Edukator.EntityLayer.Concreate;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -37,6 +38,9 @@ namespace Edukator.PresentationLayer
 
             services.AddScoped<ISocialMediaDal, EfSocialMediaDal>();
             services.AddScoped<ISocialMediaService, SocialMediaManager>();
+
+            services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Context>();
+
 
             services.AddControllersWithViews();
         }
