@@ -4,14 +4,16 @@ using Edukator.DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Edukator.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20230510155340_mig_remove_about")]
+    partial class mig_remove_about
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,10 +28,7 @@ namespace Edukator.DataAccessLayer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Description1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description2")
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image1")
@@ -42,18 +41,6 @@ namespace Edukator.DataAccessLayer.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image4")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageText1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageText2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageText3")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageText4")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title1")

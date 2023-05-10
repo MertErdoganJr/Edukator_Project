@@ -4,68 +4,22 @@ using Edukator.DataAccessLayer.Concrete;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Edukator.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20230508163842_mig_feature_class")]
+    partial class mig_feature_class
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("ProductVersion", "5.0.17")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("Edukator.EntityLayer.Concreate.About", b =>
-                {
-                    b.Property<int>("AboutID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Description1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Description2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Image1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Image2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Image3")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Image4")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageText1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageText2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageText3")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageText4")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title1")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Title2")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("AboutID");
-
-                    b.ToTable("Abouts");
-                });
 
             modelBuilder.Entity("Edukator.EntityLayer.Concreate.AppRole", b =>
                 {
