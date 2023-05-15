@@ -28,6 +28,11 @@ namespace Edukator.BusinessLayer.Concrete
             return _contactDal.GetByID(id);
         }
 
+        public List<Contact> TGetLastMessage()
+        {
+            return _contactDal.TGetLast4Message();
+        }
+
         public List<Contact> TGetList()
         {
             return _contactDal.GetList();
