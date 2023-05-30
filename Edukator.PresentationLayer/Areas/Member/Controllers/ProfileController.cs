@@ -1,12 +1,24 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Edukator.EntityLayer.Concreate;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace Edukator.PresentationLayer.Areas.Member.Controllers
 {
+    [Area("Member")]
     public class ProfileController : Controller
     {
-        public IActionResult Index()
+        private readonly UserManager<AppUser> _userManager;
+
+        public ProfileController(UserManager<AppUser> userManager)
         {
-            return View();
+            _userManager = userManager;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var values = await _userManager.FindByNameAsync(User.Identity.Name);
+            return View(values);
         }
     }
 }
